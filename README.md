@@ -99,11 +99,11 @@
 
     1. **TCP Bandwidth**:
           - The TCP bandwidth between instances located in the same region (e.g., N. Virginia - N. Virginia and Oregon - Oregon) is significantly higher than between instances in different regions (e.g., N. Virginia - Oregon).
-          - The highest bandwidth is observed between instances in Oregon, reaching **95300 Mbps**, followed by instances in N. Virginia with **49700 Mbps**.
+          - The highest bandwidth is observed between instances in Oregon, reaching **94600 Mbps**, followed by instances in N. Virginia with **51300 Mbps**.
 
     2. **Round-Trip Time (RTT)**:
           - The RTT is considerably lower for instances within the same region compared to instances in different regions.
-          - The RTT between N. Virginia and Oregon is **62.866 ms**, which is significantly higher than the RTT within the same region (e.g., **0.217 ms** for N. Virginia and **0.102 ms** for Oregon). This is due to the geographical distance between the two regions.
+          - The RTT between N. Virginia and Oregon is **65.336 ms**, which is significantly higher than the RTT within the same region (e.g., **0.256 ms** for N. Virginia and **0.125 ms** for Oregon). This is due to the geographical distance between the two regions.
 
 
         ### Summary Table:
