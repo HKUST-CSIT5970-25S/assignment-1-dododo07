@@ -71,23 +71,49 @@
 
 1. (1 mark) The metrics of network performance include **TCP bandwidth** and **round-trip time (RTT)**. Within the same region, what network performance is experienced between instances of the same type and different types? In order to answer this question, you need to complete the following table.
 
-    | Type                      | TCP b/w (Mbps) | RTT (ms) |
-    | ------------------------- | -------------- | -------- |
-    | `t3.medium` - `t3.medium` |                |          |
-    | `m5.large` - `m5.large`   |                |          |
-    | `c5n.large` - `c5n.large` |                |          |
-    | `t3.medium` - `c5n.large` |                |          |
-    | `m5.large` - `c5n.large`  |                |          |
-    | `m5.large` - `t3.medium`  |                |          |
+    1. **TCP Bandwidth**:
+          - Instances of type `m5.large` and `c5n.large` demonstrate significantly higher TCP bandwidth compared to `t3.medium` instances.
+          - The bandwidth between `m5.large` and `c5n.large` instances is nearly identical, suggesting comparable network performance capabilities.
 
-    > Region: US East (N. Virginia). Use `Ubuntu Server 22.04 LTS (HVM)` as AMI. Note: Use private IP address when using iPerf within the same region. You'll need iPerf for measuring TCP bandwidth and Ping for measuring Round-Trip time.
+    2. **Round-Trip Time (RTT)**:
+          - Instances of type `m5.large` and `c5n.large` exhibit much lower RTT values compared to `t3.medium` instances, reflecting faster response times.
+          - The RTT between instances of the same type is generally lower than between instances of different types, with the exception of `t3.medium` instances, which consistently show higher RTT values.
+
+
+        ### Summary Table:
+
+        | Type                      | TCP Bandwidth (Mbps) | RTT (ms) |
+        | ------------------------- | -------------------- | -------- |
+        | `t3.medium` - `t3.medium` | 10400                | 1.132    |
+        | `m5.large` - `m5.large`   | 51000                | 0.294    |
+        | `c5n.large` - `c5n.large` | 50800                | 0.287    |
+        | `t3.medium` - `c5n.large` | 10600                | 0.797    |
+        | `m5.large` - `c5n.large`  | 48500                | 0.693    |
+        | `m5.large` - `t3.medium`  | 11500                | 1.166    |
+
+
 
 2. (1 mark) What about the network performance for instances deployed in different regions? In order to answer this question, you need to complete the following table.
 
-    | Connection                | TCP b/w (Mbps) | RTT (ms) |
-    | ------------------------- | -------------- | -------- |
-    | N. Virginia - Oregon      |                |          |
-    | N. Virginia - N. Virginia |                |          |
-    | Oregon - Oregon           |                |          |
- 
-    > Region: US East (N. Virginia), US West (Oregon). Use `Ubuntu Server 22.04 LTS (HVM)` as AMI. All instances are `c5.large`. Note: Use public IP address when using iPerf within the same region.
+
+
+    1. **TCP Bandwidth**:
+          - The TCP bandwidth between instances located in the same region (e.g., N. Virginia - N. Virginia and Oregon - Oregon) is significantly higher than between instances in different regions (e.g., N. Virginia - Oregon).
+          - The highest bandwidth is observed between instances in Oregon, reaching **95300 Mbps**, followed by instances in N. Virginia with **49700 Mbps**.
+
+    2. **Round-Trip Time (RTT)**:
+          - The RTT is considerably lower for instances within the same region compared to instances in different regions.
+          - The RTT between N. Virginia and Oregon is **62.866 ms**, which is significantly higher than the RTT within the same region (e.g., **0.217 ms** for N. Virginia and **0.102 ms** for Oregon). This is due to the geographical distance between the two regions.
+
+
+        ### Summary Table:
+
+        | Connection                | TCP Bandwidth (Mbps) | RTT (ms) |
+        | ------------------------- | -------------------- | -------- |
+        | N. Virginia - Oregon      | 596                  | 65.336   |
+        | N. Virginia - N. Virginia | 51300                | 0.256    |
+        | Oregon - Oregon           | 94600                | 0.125    |
+
+
+
+
