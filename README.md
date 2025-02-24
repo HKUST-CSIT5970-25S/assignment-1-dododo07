@@ -22,10 +22,11 @@
 
     - **CPU Performance**:
         - Command: `sysbench cpu --cpu-max-prime=20000 run`
-        - **Explanation**: This parameter sets the upper limit for calculating prime numbers. A higher value increases the computational load, making the test more intensive. The value `20000` is chosen to ensure the test is sufficiently demanding to evaluate CPU performance.
+        - Explanation: This parameter sets the upper limit for calculating prime numbers. A higher value increases the computational load, making the test more intensive. The value `20000` is chosen to ensure the test is sufficiently demanding to evaluate CPU performance.
+          
     - **Memory Performance**:
         - Command: `sysbench memory --memory-block-size=1M --memory-total-size=10G run`
-        - **Explanation**: The `--memory-block-size` parameter sets the size of the memory blocks to be allocated, and `--memory-total-size` sets the total amount of memory to be tested. These values ensure that the memory performance is tested under significant load.
+        - Explanation: The `--memory-block-size` parameter sets the size of the memory blocks to be allocated, and `--memory-total-size` sets the total amount of memory to be tested. These values ensure that the memory performance is tested under significant load.
 
     3. **Explanation of Measurement Results**:
 
