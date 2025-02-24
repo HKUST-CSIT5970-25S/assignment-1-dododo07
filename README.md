@@ -16,26 +16,26 @@
 
     1. **Measurement Tool**:
 
-    - **Name**: The tool used for measuring CPU and memory performance is **Sysbench**, an open-source, cross-platform benchmarking tool. It is widely used for evaluating system performance, particularly for CPU, memory, and database workloads.
+       - **Name**: The tool used for measuring CPU and memory performance is **Sysbench**, an open-source, cross-platform benchmarking tool. It is widely used for evaluating system performance, particularly for CPU, memory, and database workloads.
 
     2. **Configuration of the Measurement Tool**:
-
-    - **CPU Performance**:
+ 
+        - **CPU Performance**:
         - Command: `sysbench cpu --cpu-max-prime=20000 run`
         - Explanation: This parameter sets the upper limit for calculating prime numbers. A higher value increases the computational load, making the test more intensive. The value `20000` is chosen to ensure the test is sufficiently demanding to evaluate CPU performance.
           
-    - **Memory Performance**:
+        - **Memory Performance**:
         - Command: `sysbench memory --memory-block-size=1M --memory-total-size=10G run`
         - Explanation: The `--memory-block-size` parameter sets the size of the memory blocks to be allocated, and `--memory-total-size` sets the total amount of memory to be tested. These values ensure that the memory performance is tested under significant load.
 
     3. **Explanation of Measurement Results**:
 
-    - **CPU Performance**:
+        - **CPU Performance**:
         - The result will include metrics like the total execution time and the number of events per second. These values represent how efficiently the CPU can handle computational tasks.
 
         ![CPU Performance](https://github.com/user-attachments/assets/5f63d84b-b350-4099-8cf5-7b8d37e9b5c3)
 
-    - **Memory Performance**:
+        - **Memory Performance**:
         - The result will include metrics like the total amount of transferred data and the transfer rate. These values indicate the speed and efficiency of memory operations.
 
         ![Memory Performance](https://github.com/user-attachments/assets/2e8801da-306e-4135-ae41-48d57f6f352d)
@@ -43,36 +43,29 @@
 
 2. (1 mark) Run your measurement tool on general purpose `t2.micro`, `t2.medium`, and `c5d.large` Linux instances, respectively, and find the performance differences among these instances. Launch all the instances in the **US East (N. Virginia)** region. Does the performance of EC2 instances increase commensurate with the increase of the number of vCPUs and memory resource?
 
-    ### Analyze Performance Differences
+    1. **CPU Performance**:
+       **c5d.large** shows lower CPU performance at **456.56/s**, which could be attributed to its optimization for specialized high-performance computing tasks rather than general-purpose CPU benchmarks.
 
-    #### CPU Performance:
-    - **t2.micro** and **t2.medium** exhibit similar CPU performance, with event rates of **881.73/s** and **887.67/s**, respectively.
-    - **c5d.large** shows lower CPU performance at **476.97/s**, which could be attributed to its optimization for specialized high-performance computing tasks rather than general-purpose CPU benchmarks.
+    2. **Memory Performance**:
+       **t2.micro** and **t2.medium** demonstrate comparable memory performance, with operation rates of **18669.36/s** and **18994.58/s**, respectively.
+       **c5d.large** achieves significantly higher memory performance at **20522.43/s**, indicating superior efficiency in memory operations.
 
-    #### Memory Performance:
-    - **t2.micro** and **t2.medium** demonstrate comparable memory performance, with operation rates of **19018.10/s** and **19075.94/s**, respectively.
-    - **c5d.large** achieves significantly higher memory performance at **20782.97/s**, indicating superior efficiency in memory operations.
+    3. **Conclusion**
 
-    ---
+       **CPU Performance**: The CPU performance of **t2.micro** and **t2.medium** is nearly identical, while **c5d.large** underperforms in this specific CPU benchmark.
+       **Memory Performance**: **c5d.large** outperforms both **t2.micro** and **t2.medium** in memory performance, showcasing its enhanced memory handling capabilities.
 
-    ### Conclusion
+    4. **Measurement Results Table**
 
-    - **CPU Performance**: The CPU performance of **t2.micro** and **t2.medium** is nearly identical, while **c5d.large** underperforms in this specific CPU benchmark.
-    - **Memory Performance**: **c5d.large** outperforms both **t2.micro** and **t2.medium** in memory performance, showcasing its enhanced memory handling capabilities.
+        To complete the analysis, fill in the table below with the corresponding measurement results for each instance type:
 
-    ---
+        | Instance Type | CPU Performance (events/s) | Memory Performance (operations/s) |
+        |---------------|----------------------------|-----------------------------------|
+        | t2.micro      | 876.55                     | 18669.36                          |
+        | t2.medium     | 877.97                     | 18994.58                          |
+        | c5d.large     | 456.56                     | 20522.43                          |
 
-    ### Measurement Results Table
-
-    To complete the analysis, fill in the table below with the corresponding measurement results for each instance type:
-
-    | Instance Type | CPU Performance (events/s) | Memory Performance (operations/s) |
-    |---------------|----------------------------|-----------------------------------|
-    | t2.micro      | 881.73                     | 19018.10                          |
-    | t2.medium     | 887.67                     | 19075.94                          |
-    | c5d.large     | 476.97                     | 20782.97                          |
-
-    This table summarizes the performance differences across the three instance types, highlighting the strengths and weaknesses of each in terms of CPU and memory performance.
+        This table summarizes the performance differences across the three instance types, highlighting the strengths and weaknesses of each in terms of CPU and memory performance.
 
 ## Question 2: Measure the EC2 Network performance
 
