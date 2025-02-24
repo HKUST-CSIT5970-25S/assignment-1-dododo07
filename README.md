@@ -1,4 +1,3 @@
-![image](https://github.com/user-attachments/assets/05220608-aba8-4ed6-bae4-2fd9a2d2a288)[![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-22041afd0340ce965d47ae6ef1cefeee28c7c493a6346c4f15d667ab976d596c.svg)](https://classroom.github.com/a/IAASVEAZ)
 # CSIT5970 Assignment-1: EC2 Measurement (2 questions, 4 marks)
 
 ### Deadline: 11:59PM, Feb, 28, Friday
