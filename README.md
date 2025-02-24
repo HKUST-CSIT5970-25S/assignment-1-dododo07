@@ -65,11 +65,11 @@
 
     To complete the analysis, fill in the table below with the corresponding measurement results for each instance type:
 
-| Instance Type | CPU Performance (events/s) | Memory Performance (operations/s) |
-|---------------|----------------------------|-----------------------------------|
-| t2.micro      | 881.73                     | 19018.10                          |
-| t2.medium     | 887.67                     | 19075.94                          |
-| c5d.large     | 476.97                     | 20782.97                          |
+    | Instance Type | CPU Performance (events/s) | Memory Performance (operations/s) |
+    |---------------|----------------------------|-----------------------------------|
+    | t2.micro      | 881.73                     | 19018.10                          |
+    | t2.medium     | 887.67                     | 19075.94                          |
+    | c5d.large     | 476.97                     | 20782.97                          |
 
     This table summarizes the performance differences across the three instance types, highlighting the strengths and weaknesses of each in terms of CPU and memory performance.
 
